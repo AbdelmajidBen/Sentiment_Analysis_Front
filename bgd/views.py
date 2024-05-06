@@ -1,12 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 # Create your views here.
 
-#def say_hello(request):
-    #  return render(request,'hello.html')
-    
-#def say_hello(request):
- #   return HttpResponse('Hello Jmii')
 
 def say_hello(request):
     return render(request, 'hello.html')
@@ -16,9 +10,22 @@ def dashboard(request):
 
 def architecture(request):
     return render(request, 'architecture.html')
+# bgd/views.py
+
+
+# bgd/views.py
+from django.shortcuts import render
+from .models import Tweet
 
 def data(request):
-    return render(request, 'data.html')
+    # Query all documents from MongoDB collection
+    tweets = Tweet.objects.all()
+    return render(request, 'data.html', {'tweets': tweets})
+
+
+
+
+
 
 def testing(request):
     return render(request, 'testing.html')
@@ -28,3 +35,4 @@ def models(request):
 
 def team(request):
     return render(request, 'team.html')
+

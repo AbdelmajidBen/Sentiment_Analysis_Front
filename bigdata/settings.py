@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bgd',
+    'djongo'
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bigdata.wsgi.application'
 
+DATABASES = {
+      'default': {
+          'ENGINE': 'djongo',
+          'NAME': 'tweets',
+          'ENFORCE_SCHEMA': False,
+      }
+  }
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -98,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
