@@ -17,9 +17,25 @@ def architecture(request):
 from django.shortcuts import render
 from .models import Tweet
 
+#def data(request):
+ #   # Query all documents from MongoDB collection
+  #  tweets = Tweet.objects.all()[:20] 
+   # return render(request, 'data.html', {'tweets': tweets})
+from django.shortcuts import render
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .models import Tweet
+
 def data(request):
-    # Query all documents from MongoDB collection
-    tweets = Tweet.objects.all()
+    tweets_list = Tweet.objects.all()
+    tweets_per_page = 20
+    paginator = Paginator(tweets_list, tweets_per_page)
+    page_number = request.GET.get('page', 1)
+    try:
+        tweets = paginator.page(page_number)
+    except PageNotAnInteger:
+        tweets = paginator.page(1)
+    except EmptyPage:
+        tweets = paginator.page(paginator.num_pages)
     return render(request, 'data.html', {'tweets': tweets})
 
 
