@@ -3,6 +3,8 @@
 body{
 	font-family: 'Roboto', sans-serif;
 	background-color: #eeeeea;
+	justify-content: center;
+    align-items: center;
 }
 * {
 	margin: 0;
@@ -125,7 +127,7 @@ i {
     text-align: center;
 }
 .homepagetext{
-	font-size: 20px;
+	font-size: 28px;
 	
 }
 
@@ -186,4 +188,138 @@ i {
 		bottom: -25px;
 		left: -25px;
 	}
+}
+  @import url('https://fonts.cdnfonts.com/css/bubble-letters');
+
+                
+.homepage2ndtext {
+    color: #554746; /* Mustard color */
+	margin-top: 20px;
+    font-family: 'Bubble Letters', cursive; /* Use Arial font */
+    font-size: 24px; /* Adjust font size as needed */
+    position: relative; /* Establish positioning context for pseudo-element */
+    display: inline-block; /* Ensure element only occupies necessary width */
+    text-decoration: none; /* Remove default underline */
+
+    /* Animation for underline */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.homepage2ndtext::after {
+    content: ''; /* Create pseudo-element for underline */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust distance of underline from text */
+    width: 0; /* Start with no width */
+    height: 2px; /* Thickness of underline */
+    background-color: #800020; /* Burgundy color */
+    transition: width 0.3s ease-in-out; /* Smooth width transition */
+}
+
+.homepage2ndtext:hover::after {
+    width: 100%; /* Expand width to 100% on hover */
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Set a background color for the card */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for transform, box-shadow, and border-color */
+    text-align: center;
+    align-items: center;
+    border: 3px solid #E6DAC6; /* Set initial border color */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 
+                inset 0 0 0 3px #476554, /* Border color change on hover */
+                inset 0 0 20px rgba(255, 255, 255, 0.3); /* Colorful animation effect */
+}
+
+.card img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff; /* Set a background color for the image container */
+    object-fit: cover;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    display: none;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: opacity 0.3s ease-in-out; /* Add transition for opacity */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card.active p {
+    display: block;
+    opacity: 1; /* Ensure opacity is set when active */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.details-container {
+    display: none; /* Initially hide details container */
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.details-container.active {
+    display: block; /* Display details container when active */
+}
+
+
+/* image part*/
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw; /* Set width of the container (60% of viewport width) */
+    height: 60vh; /* Set height of the container (60% of viewport height) */
+    overflow: hidden; /* Hide overflow to prevent image spillover */
+    border-radius: 8px; /* Rounded corners for container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for container */
+    margin: 20px auto; /* Center the container horizontally and add margin */
+    border: 2px solid transparent; /* Initial transparent border */
+    transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    max-height: 100%; /* Ensure image doesn't exceed container height */
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+.image-container:hover {
+    border-color: #476554; /* Change border color on hover to match card color */
+}
+
+.image-container:hover img {
+    transform: scale(1.1); /* Apply zoom effect on hover */
 }
