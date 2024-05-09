@@ -84,6 +84,32 @@ DATABASES = {
   }
 
 
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'Twitter',  # Database name (not used with MongoDB URI)
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',  # MongoDB host
+            'port': 27017,  # MongoDB port
+            'username': 'admin',  # MongoDB username
+            'password': '1234',  # MongoDB password
+            # 'authSource': 'admin',  # Optional: specify the authentication database
+            # 'authMechanism': 'SCRAM-SHA-256',  # Optional: specify the authentication mechanism
+            # 'authMechanismProperties': {}  # Optional: specify additional authentication mechanism properties
+        },
+        'LOGGING': {
+            'version': 1,
+            'loggers': {
+                'djongo': {
+                    'level': 'DEBUG' if DEBUG else 'INFO',
+                }
+            }
+        }
+    }
+}'''
+
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
