@@ -15,7 +15,7 @@ body{
 i {
 	margin-right: 10px;
 }
-/*----------bootstrap-navbar-css------------*/
+/*----------bootstrap-navbar-css----------------------------------------------------------------------------------------------------------------------------------*/
 .navbar-logo{
 	padding: 15px;
 	color: #fff;
@@ -115,11 +115,8 @@ i {
     left: -25px;
 }
 
-/* Assuming you want to target the .homepage class within the body */
 
-/* style.css */
-
-/* Minimal CSS for #homepage */
+/* Minimal CSS for #homepage---------------------------------------------------------------------------------------------------------------------- */
 .homepage {
 	margin-top: 2%;
     
@@ -196,7 +193,7 @@ i {
     color: #554746; /* Mustard color */
 	margin-top: 20px;
     font-family: 'Bubble Letters', cursive; /* Use Arial font */
-    font-size: 24px; /* Adjust font size as needed */
+    font-size: 34px; /* Adjust font size as needed */
     position: relative; /* Establish positioning context for pseudo-element */
     display: inline-block; /* Ensure element only occupies necessary width */
     text-decoration: none; /* Remove default underline */
@@ -220,6 +217,7 @@ i {
     width: 100%; /* Expand width to 100% on hover */
 }
 
+/* the css for the cards----------------------------------------------------------------------------------------------------------------------*/
 
 .card-container {
     display: flex;
@@ -294,7 +292,7 @@ i {
 }
 
 
-/* image part*/
+/* image part----------------------------------------------------------------------------------------------------------------------*/
 .image-container {
     display: flex;
     justify-content: center;
@@ -323,3 +321,74 @@ i {
 .image-container:hover img {
     transform: scale(1.1); /* Apply zoom effect on hover */
 }
+
+
+/*the after image css----------------------------------------------------------------------------------------------------------------------*/
+.card-container1{
+	height: 200px;
+	width: 600px;
+}
+
+/*the explanation part----------------------------------------------------------------------------------------------------------------------*/
+.custom-div{
+	font-family: 'Times New Roman', Times, serif;
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 80%;
+}
+
+
+
+.explanation h2{
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 24px;
+}
+/* Apply initial styles to the heading -----------------------------------------------------------------------------------------------------------------------*/
+.slide-in-heading {
+    opacity: 0;
+    transform: translateY(50%);
+    margin-left: 200px;
+    margin-top: 30px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-weight: bold; /* Make the text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a bubbly text shadow */
+}
+
+
+/* Apply slide-in animation when class is added ----------------------------------------------------------------------------------------------------------------------*/
+.slide-in-heading.slide-in-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Apply initial styles to the paragraph ----------------------------------------------------------------------------------------------------------------------*/
+.custom-div p {
+    opacity: 0;
+    transform: translateY(50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+	margin-left: 40%;
+}
+
+/* Apply slide-in animation when class is added */
+.custom-div.slide-in-active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* Apply the custom font to the heading */
+.slide-in-heading h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: normal;
+
+	
+    /* Add any other styles */
+}
+
+
+
+
