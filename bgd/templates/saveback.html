@@ -1,0 +1,59 @@
+<div class="wave-divider">
+            
+</div>
+
+<div class="new-section">
+    <div class="section-content">
+        <h2>New Section Title</h2>
+        <p>This is your new section content. Add your own HTML content here.</p>
+    </div>
+</div>
+<style>
+    /* Style for the wave divider */
+.wave-divider {
+    position: relative;
+    height: 100px; /* Adjust height of the wave divider */
+    overflow: hidden;
+    background-color: transparent; /* Transparent background color */
+}
+
+/* Style for the wave background */
+.wave-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Update background-image with new gradient colors */
+    background-image: 
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='b' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23b)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='c' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23c)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e");
+
+    background-repeat: repeat-x;
+    background-size: 1600px 60%;
+    animation: 20s waves linear infinite; /* Keep the original wave animation */
+}
+
+/* Keyframes for the wave animation */
+@keyframes waves {
+    to {
+        background-position: 1600px 130%, 3150px 130%, 5300px 130%;
+    }
+}
+
+/* Style for the new section */
+.new-section {
+    position: relative;
+    z-index: 2; /* Ensure the new section is above the wave background */
+    height: 100px; /* Match the height of the wave divider */
+    background-color:#E6DAC6; /* Transparent background color */
+    color: #ffffff; /* Text color for section content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide any overflow content within the section */
+}
+</style>

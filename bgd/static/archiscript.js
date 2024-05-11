@@ -111,31 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
     checkSlide();
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const customDiv = document.querySelector('.custom-div');
 
-    function checkSlide() {
-        // Get the top and bottom positions of the element relative to the viewport
-        const slideInAt = window.scrollY + window.innerHeight - customDiv.offsetHeight / 2;
-        const elementBottom = customDiv.offsetTop + customDiv.offsetHeight;
-
-        // Check if the element is half visible on the screen
-        const isHalfShown = slideInAt > customDiv.offsetTop;
-        const isNotScrolledPast = window.scrollY < elementBottom;
-
-        if (isHalfShown && isNotScrolledPast) {
-            customDiv.classList.add('slide-in-active');
-        } else {
-            customDiv.classList.remove('slide-in-active');
-        }
-    }
-
-    // Event listener for scroll event
-    window.addEventListener('scroll', checkSlide);
-
-    // Trigger checkSlide on page load
-    checkSlide();
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     const slideInHeading = document.querySelector('.slide-in-heading');
@@ -301,6 +277,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+$(document).ready(function() {
+    $('.new-section').fadeIn(1000); // Example animation
+});
 
 
+
+// JavaScript to dynamically insert the wave divider before the new section
+// Function to check if element is in viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    const cards = document.querySelectorAll('.cardin');
+
+    cards.forEach((card) => {
+        if (isInViewport(card)) {
+            card.classList.add('in-view');
+        } else {
+            card.classList.remove('in-view');
+        }
+    });
+}
+
+// Add scroll event listener to trigger animation on scroll
+document.addEventListener('scroll', handleScroll);
 
