@@ -535,3 +535,43 @@ i {
 .custom-terminal .comment {
     color: #6A9955;
 }
+.wave-divider {
+    position: relative;
+    margin-top: 700px;
+    height: 100px; /* Adjust height of the wave divider */
+    overflow: hidden;
+    background-color: transparent; /* Transparent background color */
+}
+
+.wave-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%234F6F52' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%234F6F52' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='b' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23b)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='c' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%234F6F52' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%234F6F52' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23c)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e");
+
+    background-repeat: repeat-x;
+    background-size: 1600px 50%;
+    animation: 20s waves linear infinite;
+}
+
+@keyframes waves {
+    to {
+        background-position: 1600px 130%, 3150px 130%, 5300px 130%;
+    }
+}
+
+/* Section content styling */
+.new-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.section-content {
+    color: #ffffff; /* Text color for section content */
+}
