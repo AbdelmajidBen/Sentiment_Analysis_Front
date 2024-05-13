@@ -106,8 +106,97 @@
             </div>
         </div>
     </div>
+<div class="homepage">
+    <div class="homepagetext">Les Modeles Utulisés</div>
+</div>
+
+<div class="card-container">
+    <div class="card">
+        <div class="card-content">
+            <h2>Modéle 1 : Support Vecteur Machine </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="new-content">
+            <h2>New Content 1</h2>
+            <p>New text for Card 1</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <h2>Modéle 2: Decision Tree</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="new-content">
+            <h2>New Content 2</h2>
+            <p>New text for Card 2</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <h2>Modéle 3: Naives Bayes</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+        <div class="new-content">
+            <h2>New Content 3</h2>
+            <p>New text for Card 3</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <h2>Modéle 4 : Logistic Regression</h2>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="new-content">
+            <h2>New Content 4</h2>
+            <p>New text for Card 4</p>
+        </div>
+    </div>
+</div>
+
+        <div class="homepage">
+            <div class="homepagetext">L'Étape du Nettoyage</div>
+        </div>
+
+        <div class="custom-terminal">
+            <div class="title-bar">
+                <div class="close-button"></div>
+                <div class="minimize-button"></div>
+                <div class="zoom-button"></div>
+            </div>
+            <div class="terminal-content">
+                <pre class="terminal-text">
+    <span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> SparkSession
+    <span class="keyword">from</span> pyspark.ml.feature <span class="keyword">import</span> CountVectorizer, RegexTokenizer, StopWordsRemover, StringIndexer
+    <span class="keyword">from</span> pyspark.ml.classification <span class="keyword">import</span> NaiveBayes
+    <span class="keyword">from</span> pyspark.ml <span class="keyword">import</span> Pipeline
+    <span class="keyword">from</span> pyspark.ml.evaluation <span class="keyword">import</span> MulticlassClassificationEvaluator
     
+    <span class="comment"># Create a Spark session</span>
+    spark = SparkSession.builder \
+        .appName(<span class="string">"Sentiment Analysis with Naive Bayes"</span>) \
+        .getOrCreate()
     
+    <span class="comment"># Load the CSV file into a DataFrame</span>
+    file_path = <span class="string">'../twitter_training.csv'</span>
+    df = spark.read.csv(file_path, header=False, inferSchema=True)
+    
+    <span class="comment"># Define column names</span>
+    df = df.withColumnRenamed(<span class="string">'_c0'</span>, <span class="string">'ID'</span>) \
+           .withColumnRenamed(<span class="string">'_c1'</span>, <span class="string">'Topic'</span>) \
+           .withColumnRenamed(<span class="string">'_c2'</span>, <span class="string">'Sentiment'</span>) \
+           .withColumnRenamed(<span class="string">'_c3'</span>, <span class="string">'Text'</span>)
+    
+    <span class="comment"># Drop rows with null values</span>
+    df = df.dropna()
+    
+    <span class="comment"># Prepare features and label</span>
+    tokenizer = RegexTokenizer(inputCol=<span class="string">'Text'</span>, outputCol=<span class="string">'words'</span>, pattern=<span class="string">'\\W'</span>)
+    remover = StopWordsRemover(inputCol=<span class="string">'words'</span>, outputCol=<span class="string">'filtered_words'</span>)
+    vectorizer = CountVectorizer(inputCol=<span class="string">'filtered_words'</span>, outputCol=<span class="string">'features'</span>)
+    indexer = StringIndexer(inputCol=<span class="string">'Sentiment'</span>, outputCol=<span class="string">'label'</span>)
+                </pre>
+            </div>
+        </div>
 
 </body>
 </html>

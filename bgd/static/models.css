@@ -278,3 +278,260 @@ i {
     margin: 0;
     padding: 5px 0;
 }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card styles */
+.card {
+    width: calc(50% - 40px);
+    margin: 20px;
+	font-family: 'Times New Roman', Times, serif;
+    height: 200px;
+    background-color: #476554;
+    border: 2px solid #141E46;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-image: inherit;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.card-content {
+    padding: 20px;
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-content {
+    opacity: 0;
+}
+
+.new-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #476554;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .new-content {
+    opacity: 1;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+.notebook-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notebook-cell {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.notebook-cell h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.notebook-cell p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Markdown Cell */
+.markdown-cell {
+    background-color: #f9f9f9;
+}
+
+/* Code Cell */
+.code-cell {
+    background-color: #f7f7f7;
+}
+
+.code-cell pre {
+    margin: 0;
+    color: #333; /* Code text color */
+}
+
+/* Output Cell */
+.output-cell {
+    background-color: #fafafa;
+}
+
+.output-cell pre {
+    margin: 0;
+    color: green; /* Output text color */
+}.vscode-header {
+    background-color: #333;
+    padding: 8px 16px;
+}
+
+.menu {
+    display: flex;
+    gap: 16px;
+}
+
+.menu-item {
+    cursor: pointer;
+    color: #d4d4d4;
+}
+
+.vscode-editor {
+    width: 600px;
+    margin: 20px auto;
+    background-color: #2d2d2d; /* Editor background color */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.editor-tab {
+    background-color: #1e1e1e;
+    padding: 8px 16px;
+    border-bottom: 1px solid #333;
+}
+
+.editor-tab span {
+    color: #d4d4d4;
+}
+
+.editor-cell {
+    padding: 16px;
+    overflow-x: auto;
+    white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+}
+
+.editor-cell pre {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #d4d4d4;
+}
+
+/* Syntax highlighting for Python code */
+.token {
+    font-weight: bold;
+}
+
+.token.keyword {
+    color: #dcdcaa; /* Yellow */
+}
+
+.token.function {
+    color: #82aaff; /* Blue */
+}
+
+.token.comment {
+    color: #808080; /* Gray */
+    font-style: italic;
+}
+
+.custom-terminal {
+    width: 70%;
+	position: absolute;
+	margin-top: 1600px;
+    max-width: 800px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom-terminal .title-bar {
+    height: 30px;
+    background-color: #3b3b3b;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+}
+
+.custom-terminal .title-bar div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+.custom-terminal .close-button {
+    background-color: #ff5f56;
+}
+
+.custom-terminal .minimize-button {
+    background-color: #ffbd2e;
+}
+
+.custom-terminal .zoom-button {
+    background-color: #27c93f;
+}
+
+.custom-terminal .terminal-content {
+    padding: 20px;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.custom-terminal .terminal-text {
+    white-space: pre-wrap;
+    margin: 0;
+    color: #fff;
+}
+
+.custom-terminal .keyword {
+    color: #569CD6;
+}
+
+.custom-terminal .string {
+    color: #CE9178;
+}
+
+.custom-terminal .comment {
+    color: #6A9955;
+}
