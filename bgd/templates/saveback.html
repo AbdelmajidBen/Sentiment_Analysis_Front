@@ -1,59 +1,108 @@
-<div class="wave-divider">
+<div class="section-content">
+    <div class="titledoc">Decouvrez Les Documentation :</div>
+        <div class="cardin">
+            <div class="cardin-content">
+                <h2>Documentation Docker</h2>
+                <p>Pour explorer la Documentation Du docker suivez le lien ci dessous <a href="https://docs.docker.com/" target="_blank"><br/>Clickez - ici</a></p>
+                <img src="{% static 'images/a33.png' %}"class="cardin-image" >
+            </div>
             
-</div>
+        </div>
+        <div class="cardin">
+            <div class="cardin-content">
+                <h2>Documentation Github</h2>
+                <p>Pour explorer la Documentation Du Github suivez le lien ci dessous 
+                <a href="https://www.mongodb.com/docs/"  target="_blank"><br/>Clickez - ici</a></p>
+                <img src="{% static 'images/a35.png' %}"  width="50%"
+                height="50%">
+            </div>
+        </div>
+        <div class="cardin">
+            <div class="cardin-content">
+                <h2>Documentation Kafka</h2>
+                <p>Pour explorer la Documentation Du kafka suivez le lien ci dessous 
+                <a href="ttps://kafka.apache.org/documentation/" target="_blank"><br/>Clickez - ici</a></p>
+                <img src="{% static 'images/a37.png' %}" 
+                height="130px" width="70px" >
+            </div>
+        </div>
 
-<div class="new-section">
-    <div class="section-content">
-        <h2>New Section Title</h2>
-        <p>This is your new section content. Add your own HTML content here.</p>
-    </div>
-</div>
-<style>
-    /* Style for the wave divider */
-.wave-divider {
-    position: relative;
-    height: 100px; /* Adjust height of the wave divider */
-    overflow: hidden;
-    background-color: transparent; /* Transparent background color */
-}
+        <div class="cardin">
+            <div class="cardin-content">
+                <h2>Documentation Mongodb</h2>
+                <p>Pour explorer la Documentation Du Mongodb suivez le lien ci dessous 
+                <a href="ttps://kafka.apache.org/documentation/" target="_blank"><br/>Clickez - ici</a></p>
+                <img src="{% static 'images/a38.png' %}" 
+                height="70px" width="200px" >
+            </div>
+        </div>
 
-/* Style for the wave background */
-.wave-divider::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+        <div class="cardin">
+            <div class="cardin-content">
+                <h2>Documentation Spark</h2>
+                <p>Pour explorer la Documentation Du Spark suivez le lien ci dessous 
+                <a href="ttps://kafka.apache.org/documentation/" target="_blank"><br/>Clickez - ici</a></p>
+                <img src="{% static 'images/a36.png' %}" 
+                height="130px" width="130px" >
+            </div>
+        </div>
 
-    /* Update background-image with new gradient colors */
-    background-image: 
-        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
-        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='b' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23b)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
-        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='c' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23E8DFCA' stop-opacity='.25' offset='0%25'/%3e%3cstop stop-color='%23E8DFCA' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23c)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e");
-
-    background-repeat: repeat-x;
-    background-size: 1600px 60%;
-    animation: 20s waves linear infinite; /* Keep the original wave animation */
-}
-
-/* Keyframes for the wave animation */
-@keyframes waves {
-    to {
-        background-position: 1600px 130%, 3150px 130%, 5300px 130%;
-    }
-}
-
-/* Style for the new section */
-.new-section {
-    position: relative;
-    z-index: 2; /* Ensure the new section is above the wave background */
-    height: 100px; /* Match the height of the wave divider */
-    background-color:#E6DAC6; /* Transparent background color */
-    color: #ffffff; /* Text color for section content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Hide any overflow content within the section */
-}
-</style>
+        <style>
+            .cardin {
+                width: 300px;
+                height: 300px;
+                background-color: #ccc;
+                border-radius: 30px;
+                overflow: hidden;
+                position: relative;
+                border: 2px solid #ccc;
+                transition: border-color 0.3s ease;
+                animation: slideInLeftAnimation 1s ease;
+                animation-fill-mode: forwards; /* Keeps the last keyframe state */
+                margin-left: 75%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .cardin-content {
+                padding: 10px;
+                text-align: center; /* Center align content within the card */
+            }
+            
+            .cardin h2 {
+                color: #476554;
+                font-size: 20px;
+                margin: 0; /* Remove default margin to ensure centered properly */
+            }
+            
+            .cardin:hover {
+                border-color: #17105a; /* Dark blue color on hover */
+            }
+            
+            /* Animation keyframes */
+            @keyframes slideInLeftAnimation {
+                from {
+                    transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+            }
+            
+            /* Class to trigger animation only when in view */
+            .cardin.in-view {
+                animation-play-state: running; /* Resume animation when in view */
+            }
+            
+            .cardin-image {
+                width: 100%; /* Set image width to 100% of its container */
+                height: auto; /* Maintain aspect ratio */
+                display: block; /* Ensure image behaves like a block element */
+                border-radius: 10px; /* Optional: Add border-radius to image */
+            }
+            
+            /*installation process*/
+            
+        </style>

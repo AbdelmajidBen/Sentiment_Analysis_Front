@@ -410,7 +410,7 @@ i {
 
 }
 .section-content h2  {
-	margin-left: 30px;
+	margin-left: 150px;
 	font-size: 50px;
 	color:#E6DAC6;
 }
@@ -428,57 +428,81 @@ menu card content
 	
 
 }
+.cardin-container-five {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    background-color: #476554;
+    margin-top: -10px;
+}
+
 .cardin {
-    width: 300px;
+    width: calc(20% - 20px);
+    min-width: 200px;
     height: 300px;
     background-color: #ccc;
     border-radius: 30px;
     overflow: hidden;
-    position: relative;
     border: 2px solid #ccc;
-    transition: border-color 0.3s ease;
-    animation: slideInLeftAnimation 1s ease;
-    animation-fill-mode: forwards; /* Keeps the last keyframe state */
-    margin-left: 75%;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-	margin-bottom: 20px;
+    flex-direction: column; /* Ensure content stacks vertically */
+    justify-content: space-between; /* Align content vertically */
+    font-family: 'Times New Roman', Times, serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and box-shadow */
+}
+
+.cardin:hover {
+    transform: translateY(-5px); /* Move card up slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 
+                inset 0 0 0 3px #476554, /* Border color change on hover */
+                inset 0 0 20px rgba(255, 255, 255, 0.3); /* Colorful animation effect */
 }
 
 .cardin-content {
-    padding: 10px;
-    text-align: center; /* Center align content within the card */
+    padding: 20px;
+    text-align: center;
 }
 
 .cardin h2 {
     color: #476554;
     font-size: 20px;
-    margin: 0; /* Remove default margin to ensure centered properly */
+    margin: 0;
 }
 
-.cardin:hover {
-    border-color: #17105a; /* Dark blue color on hover */
-}
-
-/* Animation keyframes */
-@keyframes slideInLeftAnimation {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-/* Class to trigger animation only when in view */
-.cardin.in-view {
-    animation-play-state: running; /* Resume animation when in view */
+.cardin p {
+    color: #333;
+    font-size: 16px;
+    margin: 10px 0;
 }
 
 .cardin-image {
-    width: 100%; /* Set image width to 100% of its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure image behaves like a block element */
-    border-radius: 10px; /* Optional: Add border-radius to image */
+    width: 100%;
+    height: 100%; /* Use 100% height to maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire space */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border-radius: 10px;
+}
+
+/* Animation keyframes */
+@keyframes slideInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro{
+    font-family: 'Times New Roman', Times, serif;
+    background-color:hsl(60, 10%, 92%);
+    margin-top: -10px;
+
+
 }
