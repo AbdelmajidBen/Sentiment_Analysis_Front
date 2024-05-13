@@ -125,8 +125,35 @@ i {
     text-align: center;
 }
 .homepagetext{
-	font-size: 20px;
+	font-size: 30px;
 	
+}
+.homepagetext {
+    color: #554746; /* Mustard color */
+	margin-top: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 34px; /* Adjust font size as needed */
+    position: relative; /* Establish positioning context for pseudo-element */
+    display: inline-block; /* Ensure element only occupies necessary width */
+    text-decoration: none; /* Remove default underline */
+
+    /* Animation for underline */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.homepagetext::after {
+    content: ''; /* Create pseudo-element for underline */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust distance of underline from text */
+    width: 0; /* Start with no width */
+    height: 2px; /* Thickness of underline */
+    background-color: #800020; /* Burgundy color */
+    transition: width 0.3s ease-in-out; /* Smooth width transition */
+}
+
+.homepagetext:hover::after {
+    width: 100%; /* Expand width to 100% on hover */
 }
 
 
@@ -188,57 +215,66 @@ i {
 	}
 }
 
-/* Additional CSS for Card */
-.card-container {
+
+
+.container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 30px; /* Adjust margin as needed */
-    background-color: #eeeeea; /* Match the background color */
-    padding: 20px; /* Add padding for spacing */
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.card {
-    width: 45%; /* Set width for each card */
-    height: 300px; /* Set height for each card */
-    margin: 10px; /* Add margin for spacing between cards */
-    perspective: 1000px;
-    cursor: pointer;
-    box-sizing: border-box; /* Include padding and border in the width */
-}
-
-.card-inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.terminal-window {
+    width: 50%;
+    background-color: #2d2d2d;
     border-radius: 8px;
-    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
-.card-back {
-    transform: rotateY(180deg);
+.title-bar {
+    height: 30px;
+    background-color: #3b3b3b;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
 }
 
-@media (max-width: 768px) {
-    .card {
-        width: 100%; /* Full width on smaller screens */
-    }
+.title-bar div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.terminal-window p{color: #fff;}
+.close-button {
+    background-color: #ff5f56;
 }
 
+.minimize-button {
+    background-color: #ffbd2e;
+}
+
+.zoom-button {
+    background-color: #27c93f;
+}
+
+.terminal-content {
+    padding: 20px;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.terminal-text {
+    white-space: pre-line;
+    margin: 0;
+}
+
+.terminal-text p {
+    margin: 0;
+    padding: 5px 0;
+}

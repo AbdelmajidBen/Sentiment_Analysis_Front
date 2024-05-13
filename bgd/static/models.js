@@ -76,8 +76,29 @@ jQuery(document).ready(function($){
 //         }
 //     })
 // });
-$(document).ready(function() {
-    $('.card').click(function() {
-        $(this).find('.card-inner').toggleClass('is-flipped');
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    const overlay = document.querySelector('.overlay');
+
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'block';
+            overlay.style.display = 'block'; // Display the overlay
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+                overlay.style.display = 'none'; // Hide the overlay
+                const cardBack = card.querySelector('.card-back');
+                cardBack.style.display = 'block';
+            }, 1000); // Adjust the delay as needed (1 second in this case)
+        });
+
+        card.addEventListener('mouseleave', () => {
+            const cardBack = card.querySelector('.card-back');
+            cardBack.style.display = 'none';
+        });
     });
 });
