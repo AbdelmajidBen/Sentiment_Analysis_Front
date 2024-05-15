@@ -340,7 +340,13 @@ i {
     overflow: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
+    color: #EADBC8;
+
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .card:hover .new-content {
     opacity: 1;
@@ -574,4 +580,27 @@ i {
 
 .section-content {
     color: #ffffff; /* Text color for section content */
+}
+
+.animated-click-me {
+    font-size: 24px;
+    color: #EADBC8;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    /* Animation properties */
+    animation-name: bounce; /* Name of the animation */
+    animation-duration: 0.5s; /* Duration of the animation */
+    animation-iteration-count: infinite; /* Infinite loop */
+    animation-direction: alternate; /* Reverse animation direction */
+}
+
+/* Keyframes for the bounce animation */
+@keyframes bounce {
+    from {
+        transform: translateY(0); /* Starting position */
+    }
+    to {
+        transform: translateY(-10px); /* Ending position */
+    }
 }
